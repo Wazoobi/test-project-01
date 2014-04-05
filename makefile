@@ -6,9 +6,9 @@ LDFLAGS=
 SOURCES=src/Commands.cpp src/HelperFunctions.cpp src/Login.cpp src/main.cpp
 SOURCEDIR=./src/
 OBJECTS=$(SOURCES:.cpp=.o)
-OBJECTDIR=./build/obj
+OBJECTDIR=./build/obj/
 EXECUTABLE=_build
-EXECUTABLEDIR=./build
+EXECUTABLEDIR=./build/
 
 all: $(SOURCES) $(EXECUTABLE)
 	mv $(EXECUTABLE) $(EXECUTABLEDIR)
