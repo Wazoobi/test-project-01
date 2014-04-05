@@ -39,12 +39,12 @@ int main()
 
     if(!CheckLogin(login))
     {
-        printf("Incorrect username and/or password. Exiting.\n");
+        OutputText("Incorrect username and/or password. Exiting.\n");
         return 0;
     }
 
     // Successful login
-    printf("Successful Login.\n'?' or 'HELP' will display commands.\n\n");
+    OutputText("Successful Login.\n'?' or 'HELP' will display commands.\n\n");
 
     // Enter main loop
     while(_running)
@@ -64,7 +64,15 @@ int main()
             // Run the command
         }
         else
-            printf("Invalid Command.\n\n");
+        {
+            //printf("Invalid Command.\n\n");
+            // Format the error message for sending in OutputText()
+            std::string msg;
+            char buffer[50];
+            snprintf(buffer, 50, "Invalid Command. %s\n\n", command.c_str());
+            msg = buffer;
+            OutputText(msg);
+        }
     }
 
     // Shutdown

@@ -9,11 +9,10 @@
 // Globals
 extern bool _running; // boolean used to exit main loop.
 
-// Function Declarations
+// Function Declaratiosn
 bool ParseCommand(std::string cmd);
 
 // Classes
-
 //TODO: What does the command class need? A string for the command? A list of
 //      strings for additional parameters/arguments? What else? What commands
 //      are there? Quit, certainly, which just sets _running to false, and

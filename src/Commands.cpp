@@ -25,7 +25,7 @@ bool ParseCommand(std::string cmd)
     // Simple implementation of a couple key commands
     if(ToLower(cmd) == "quit")
     {
-        printf("Quitting...\n");
+        OutputText("Quitting...\n");
         SetRunning(false);
         return true;
     }
