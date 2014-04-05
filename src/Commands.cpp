@@ -29,6 +29,12 @@ bool ParseCommand(std::string cmd)
         SetRunning(false);
         return true;
     }
+    
+    if(ToLower(cmd) == "help")
+    {
+        PrintHelp();
+        return true;
+    }
 
     return false;
 }
@@ -37,3 +43,11 @@ bool ParseCommand(std::string cmd)
 // Want to make this private somehow, probably by implementing it in a
 // CommandHandler class of some sort.
 void SetRunning(bool running) {_running = running;}
+
+void PrintHelp(void)
+{
+    //TODO: Would be nice to eventually have these prints in a script instead.
+    OutputText("Valid Commands: \n");
+    OutputText("\t HELP \t\t Shows this help. \n");
+    OutputText("\t QUIT \t\t Quits the program. \n");
+}

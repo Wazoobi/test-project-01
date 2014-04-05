@@ -3,11 +3,11 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=src/Commands.cpp src/HelperFunctions.cpp src/Login.cpp src/main.cpp
+SOURCES=src/Commands.cpp src/FileIO.cpp src/HelperFunctions.cpp src/Login.cpp src/main.cpp
 SOURCEDIR=./src/
 OBJECTS=$(SOURCES:.cpp=.o)
 OBJECTDIR=./build/obj/
-EXECUTABLE=_build
+EXECUTABLE=run
 EXECUTABLEDIR=./build/
 
 all: $(SOURCES) $(EXECUTABLE)
