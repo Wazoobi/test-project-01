@@ -9,6 +9,11 @@
 #include "HelperFunctions.h"
 #include "Login.h"
 
+// Windows doesn't have snprintf
+#if _WIN32
+#define snprintf _snprintf
+#endif
+
 //main: 
 int main()
 {
