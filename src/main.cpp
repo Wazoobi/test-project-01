@@ -1,7 +1,7 @@
 // Main.cpp
 // The main file that runs the tool.
 
-#include <iostream>
+//#include <iostream>
 #include <stdio.h>
 #include <string>
 
@@ -9,12 +9,7 @@
 #include "HelperFunctions.h"
 #include "Login.h"
 
-//Global Defines
-//#define MAX_CHAR_LENGTH 64 // No longer being used
-
-//Function Declarations
-std::string GetInput(void);
-
+//main: 
 int main()
 {
     // Login
@@ -26,11 +21,13 @@ int main()
     InitializeValidLogins();
 
     // Get userName from user input
-    printf("user: ");
+    //printf("user: ");
+    OutputText("user: ", MSG_TERMINAL_OUTPUT);
     userName = GetInput();
 
     // Get passWord from user input
-    printf("password: ");
+    //printf("password: ");
+    OutputText("password: ", MSG_TERMINAL_OUTPUT);
     passWord = GetInput();
 
     LoginCredentials login;
@@ -39,12 +36,12 @@ int main()
 
     if(!CheckLogin(login))
     {
-        OutputText("Incorrect username and/or password. Exiting.\n");
+        OutputText("Incorrect username and/or password. Exiting.\n", MSG_ERROR);
         return 0;
     }
 
     // Successful login
-    OutputText("Successful Login.\n'?' or 'HELP' will display commands.\n\n");
+    OutputText("Successful Login.\n'?' or 'HELP' will display commands.\n\n", MSG_TERMINAL_OUTPUT);
 
     // Enter main loop
     while(_running)
@@ -52,7 +49,8 @@ int main()
         std::string command;
 
         // Parse user input for commands and run them
-        printf("Enter Command: ");
+        //printf("Enter Command: ");
+        OutputText("Enter Command: ", MSG_TERMINAL_OUTPUT);
         command = GetInput();
 
         //temp
@@ -71,7 +69,7 @@ int main()
             char buffer[50];
             snprintf(buffer, 50, "Invalid Command. %s\n\n", command.c_str());
             msg = buffer;
-            OutputText(msg);
+            OutputText(msg, MSG_ERROR);
         }
     }
 
@@ -87,16 +85,4 @@ int main()
     hello();*/
 
     return 0;
-}
-
-//Function Definitions
-
-// GetInput
-// Simply get user input from the console.
-std::string GetInput(void)
-{
-    std::string input;
-    getline(std::cin, input);
-
-    return input;
 }

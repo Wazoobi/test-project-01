@@ -25,7 +25,7 @@ bool ParseCommand(std::string cmd)
     // Simple implementation of a couple key commands
     if(ToLower(cmd) == "quit")
     {
-        OutputText("Quitting...\n");
+        OutputText("Quitting...\n", MSG_TERMINAL_OUTPUT);
         SetRunning(false);
         return true;
     }
@@ -47,7 +47,7 @@ void SetRunning(bool running) {_running = running;}
 void PrintHelp(void)
 {
     //TODO: Would be nice to eventually have these prints in a script instead.
-    OutputText("Valid Commands: \n");
-    OutputText("\t HELP \t\t Shows this help. \n");
-    OutputText("\t QUIT \t\t Quits the program. \n");
+    OutputText("Valid Commands: \n", MSG_TERMINAL_OUTPUT);
+    OutputText("\t HELP \t\t Shows this help. \n", MSG_TERMINAL_OUTPUT);
+    OutputText("\t QUIT \t\t Quits the program. \n", MSG_TERMINAL_OUTPUT);
 }
